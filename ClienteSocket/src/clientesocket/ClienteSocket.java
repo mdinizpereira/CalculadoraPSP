@@ -1,9 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package clientesocket;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.net.Socket;
 
 /**
  *
@@ -15,7 +16,38 @@ public class ClienteSocket {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       try{
+			System.out.println("Creando socket cliente");
+			Socket cliente=new Socket();
+			System.out.println("Estableciendo la conexi�n");
+			
+			InetSocketAddress addr=new InetSocketAddress("locahost",5555);
+			cliente.connect(addr);
+
+			InputStream is = cliente.getInputStream();
+			OutputStream os= cliente.getOutputStream();
+
+			System.out.println("Enviando mensaje");
+
+			int operador1 = 2;
+                        int operador2 = 4;
+                        String operacion = "+";
+                        
+			os.write(operador1);
+                        os.write(operador2);
+                        os.write(operacion.getBytes());
+
+			System.out.println("Mensaje enviado");
+
+			System.out.println("Cerrando el socket cliente");
+
+			cliente.close();
+
+			System.out.println("Terminado");
+
+			}catch (IOException e) {
+				e.printStackTrace();
+			}
     }
     
 }
