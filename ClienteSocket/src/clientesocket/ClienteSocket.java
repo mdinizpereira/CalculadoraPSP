@@ -29,13 +29,13 @@ public class ClienteSocket {
 
 			System.out.println("Enviando mensaje");
 
-			int operador1 = 2;
-                        int operador2 = 4;
-                        String operacion = "suma";
-			os.write(operador1);
-                        os.write(operador2);
-                        os.write(operacion.getBytes());
-
+			int num1 = 2;
+                        int num2 = 4;
+                        String operador = "suma";
+			os.write(num1);
+                        os.write(num2);
+                        os.write(operador.getBytes());
+                        
 			System.out.println("Mensaje enviado");
 
 			System.out.println("Cerrando el socket cliente");
