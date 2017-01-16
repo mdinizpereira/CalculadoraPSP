@@ -38,10 +38,17 @@ public class ServidorSocket {
 
                         int num1 = is.read();
                         int num2= is.read();
-                        String operador = String.valueOf(is.read());
+                        byte[] operador = new byte[4];
+                        is.read(operador);
+                        String operacion = new String(operador);
+                        System.out.println("primer numero recibido: "+num1);
+                        System.out.println("segundo numero recibido: "+num2);
+			System.out.println("Mensaje recibido: "+new String(operador));
                         int resultado=0;
-                        if (operador.equalsIgnoreCase("suma")){
+                        if(operacion.equalsIgnoreCase("suma")){
                             resultado =(num1+num2);
+                        } else {
+                            
                         }
 			System.out.println("Resultado: "+ resultado);
 
