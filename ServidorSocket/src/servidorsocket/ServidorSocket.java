@@ -38,9 +38,11 @@ public class ServidorSocket {
 
                         int num1 = is.read();
                         int num2= is.read();
-                        byte[] operador= new byte[1];
-                        is.read(operador);
-                        int resultado = (num1+num2);
+                        String operador = String.valueOf(is.read());
+                        int resultado=0;
+                        if (operador.equalsIgnoreCase("suma")){
+                            resultado =(num1+num2);
+                        }
 			System.out.println("Resultado: "+ resultado);
 
 			System.out.println("Cerrando el nuevo socket");
