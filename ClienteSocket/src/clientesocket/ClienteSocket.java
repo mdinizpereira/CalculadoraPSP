@@ -19,9 +19,9 @@ public class ClienteSocket {
        try{
 			System.out.println("Creando socket cliente");
 			Socket cliente=new Socket();
-			System.out.println("Estableciendo la conexi�n");
+			System.out.println("Estableciendo la conexión");
 			
-			InetSocketAddress addr=new InetSocketAddress("locahost",5555);
+			InetSocketAddress addr=new InetSocketAddress("localhost",5555);
 			cliente.connect(addr);
 
 			InputStream is = cliente.getInputStream();
@@ -31,8 +31,7 @@ public class ClienteSocket {
 
 			int operador1 = 2;
                         int operador2 = 4;
-                        String operacion = "+";
-                        
+                        String operacion = "suma";
 			os.write(operador1);
                         os.write(operador2);
                         os.write(operacion.getBytes());
