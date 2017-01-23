@@ -11,13 +11,11 @@ import java.net.Socket;
  *
  * @author Miguel
  */
-public class ServidorSocket {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-       try{
+public class ServidorSocket extends Thread{
+    
+    @Override
+    public void run() {
+        try{
 			System.out.println("Creando socket servidor");
 	
 			ServerSocket serverSocket=new ServerSocket();
@@ -71,5 +69,11 @@ public class ServidorSocket {
 			}catch (IOException e) {
 			}
     }
-    
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        new ServidorSocket().start();
+    }
 }
