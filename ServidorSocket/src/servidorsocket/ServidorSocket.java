@@ -57,7 +57,7 @@ public class ServidorSocket {
                             System.out.println("No ha realizado ninguna operación");
                         }
 			System.out.println("Resultado: "+ resultado);
-                        
+                        os.write(resultado);
 			System.out.println("Cerrando el nuevo socket");
 
 			newSocket.close();
