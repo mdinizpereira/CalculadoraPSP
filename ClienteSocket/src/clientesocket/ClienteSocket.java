@@ -32,7 +32,7 @@ public class ClienteSocket {
 
 			int num1 = 2;
                         int num2 = 4;
-                        String operador = "sumar";
+                        String operador = "sum";
 			os.write(num1);
                         os.write(num2);
                         os.write(operador.getBytes());
