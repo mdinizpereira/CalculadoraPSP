@@ -29,10 +29,20 @@ public class ClienteSocket {
 			OutputStream os= cliente.getOutputStream();
 
 			System.out.println("Enviando mensaje");
-
-			int num1 = 2;
-                        int num2 = 4;
-                        String operador = "sum";
+			int num1 = Integer.parseInt(JOptionPane.showInputDialog("Introduce el primer numero"));
+                        String petuser = JOptionPane.showInputDialog("Introduce el operador");
+                        int num2 = Integer.parseInt(JOptionPane.showInputDialog("Introduce el segundo numero"));
+                        
+                        String operador = "";
+                        if(petuser.equalsIgnoreCase("+")){
+                            operador = "sum";
+                        } else if (petuser.equalsIgnoreCase("-")){
+                            operador = "res";
+                        } else if (petuser.equalsIgnoreCase("/")){
+                            operador = "div";
+                        } else if (petuser.equalsIgnoreCase("*")){
+                            operador = "mul";
+                        }
 			os.write(num1);
                         os.write(num2);
                         os.write(operador.getBytes());
