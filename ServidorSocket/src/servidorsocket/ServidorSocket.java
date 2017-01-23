@@ -25,14 +25,15 @@ public class ServidorSocket extends Thread {
             InetSocketAddress addr = new InetSocketAddress("localhost", puerto);
             serverSocket.bind(addr);
             puerto++;
-            if(puerto<5558){
+            
+            System.out.println("Aceptando conexiones");
+            Socket newSocket = serverSocket.accept();
+            
+            if(puerto<=5557){
             Thread cli = new ServidorSocket();
             cli.start();
             }
-
-            System.out.println("Aceptando conexiones");
-            Socket newSocket = serverSocket.accept();
-
+            
             System.out.println("Conexión recibida");
             InputStream is = newSocket.getInputStream();
             OutputStream os = newSocket.getOutputStream();
