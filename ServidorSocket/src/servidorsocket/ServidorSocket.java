@@ -38,20 +38,26 @@ public class ServidorSocket {
 
                         int num1 = is.read();
                         int num2= is.read();
-                        byte[] operador = new byte[4];
+                        byte[] operador = new byte[11];
                         is.read(operador);
                         String operacion = new String(operador);
                         System.out.println("primer numero recibido: "+num1);
                         System.out.println("segundo numero recibido: "+num2);
-			System.out.println("Mensaje recibido: "+new String(operador));
+			System.out.println("Mensaje recibido: "+operacion);
                         int resultado=0;
-                        if(operacion.equalsIgnoreCase("suma")){
-                            resultado =(num1+num2);
+                        if(operacion.equalsIgnoreCase("sumar")){
+                            resultado = (num1+num2);
+                        } else if(operacion.equalsIgnoreCase("restar")){
+                            resultado =(num1-num2);
+                        } else if(operacion.equalsIgnoreCase("dividir")){
+                            resultado =(num1/num2);
+                        } else if(operacion.equalsIgnoreCase("multiplicar")){
+                            resultado =(num1*num2);
                         } else {
-                            
+                            System.out.println("No ha realizado ninguna operación");
                         }
 			System.out.println("Resultado: "+ resultado);
-
+                        
 			System.out.println("Cerrando el nuevo socket");
 
 			newSocket.close();
