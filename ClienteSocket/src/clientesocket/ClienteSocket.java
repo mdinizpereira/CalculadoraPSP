@@ -49,7 +49,7 @@ public class ClienteSocket {
                         
 			System.out.println("Mensaje enviado");
                         
-                        JOptionPane.showMessageDialog(null,is.read());
+                        JOptionPane.showMessageDialog(null,"Resultado= "+is.read());
 			System.out.println("Cerrando el socket cliente");
 
 			cliente.close();
