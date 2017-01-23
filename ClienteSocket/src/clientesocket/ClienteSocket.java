@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,13 +32,14 @@ public class ClienteSocket {
 
 			int num1 = 2;
                         int num2 = 4;
-                        String operador = "suma";
+                        String operador = "sumar";
 			os.write(num1);
                         os.write(num2);
                         os.write(operador.getBytes());
                         
 			System.out.println("Mensaje enviado");
-
+                        
+                        JOptionPane.showMessageDialog(null,is.read());
 			System.out.println("Cerrando el socket cliente");
 
 			cliente.close();
