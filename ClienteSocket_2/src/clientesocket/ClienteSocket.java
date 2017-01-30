@@ -15,6 +15,8 @@ public class ClienteSocket {
 
     /**
      * @param args the command line arguments
+     * el codigo de este proyecto es identico al clienteSocket y su javadoc
+     * está explicado en este mismo
      */
     public static void main(String[] args) {
         try {
