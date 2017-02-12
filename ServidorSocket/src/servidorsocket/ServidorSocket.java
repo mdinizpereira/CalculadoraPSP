@@ -69,7 +69,7 @@ public class ServidorSocket extends Thread {
             String operacion = new String(operador);
             System.out.println("primer numero recibido: " + num1);
             System.out.println("segundo numero recibido: " + num2);
-            System.out.println("Mensaje recibido: " + new String(operador));
+            System.out.println("Mensaje recibido: " + operacion);
             int resultado = 0;
             if (operacion.equalsIgnoreCase("sum")) {
                 resultado = (num1 + num2);
